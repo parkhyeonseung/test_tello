@@ -5,6 +5,7 @@ panel = cv2.imread('images.jpeg')
 tello = Tello()
 
 val = 50
+i=0
 
 tello.connect()
 
@@ -15,13 +16,17 @@ while 1:
     try:
         img = frame.frame
 
-        cv2.namedWindow('a')
-        cv2.imshow('a',img)
+        cv2.namedWindow('tello stream')
+        cv2.imshow('tello stream',img)
 
         k =cv2.waitKey(1) & 0xFF
 
         if k == ord('q'):
             break
+
+        elif k== ord('p'):
+            cv2.imwrite(f'picture{i}.png',img)
+            i+=1
 
         elif k== ord('c'):
             val+=10
