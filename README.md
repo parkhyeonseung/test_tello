@@ -1,1 +1,1 @@
-# test_tello
+# 교육용 tello drone keyboard control
